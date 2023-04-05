@@ -1,0 +1,20 @@
+<div class="car-way">
+    <mat-icon class="mat-icon-rtl-mirror signal" [style.color]="signalColor" [style.left.px]="signalPositionInPixel">
+        fluorescent
+    </mat-icon>
+    <mat-icon [style.left.px]="carPosition" class="mat-icon-rtl-mirror car"
+        [style.transform]="'rotateY(' + (direction == 'left' ? '3.142rad' : '0rad') + ')'">
+        local_shipping
+        <mat-icon class="mat-icon-rtl-mirror stop-signal" [style.visibility]="stopSignalColor">
+            fluorescent
+        </mat-icon>
+    </mat-icon>
+
+</div>
+<div class="buttons">
+    <button mat-raised-button color="primary" (click)="setDirection('left')">Move Left</button>
+    <button mat-raised-button color="primary" (click)="setDirection('right')">Move Right</button>
+</div>
+<div class="log">
+    <span>{{log}}</span>
+</div>
